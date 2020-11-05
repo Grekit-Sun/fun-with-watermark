@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.yifan.funwithwatermark"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -20,14 +20,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation "androidx.appcompat:appcompat:${project.ANDROID_X_VERSION}"
+    implementation "androidx.percentlayout:percentlayout:${project.ANDROID_X_VERSION}"
+    implementation "androidx.recyclerview:recyclerview:${project.ANDROID_X_VERSION}"
+    implementation "androidx.cardview:cardview:${project.ANDROID_X_VERSION}"
+    implementation "com.google.android.material:material:${project.ANDROID_X_MATERIAL_VERSION}"
+    implementation "androidx.constraintlayout:constraintlayout:${project.CONSTRAINTLAYOUT_VERSION}"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //butterknife
+    api "com.jakewharton:butterknife:${project.BUTTERKNIFE_VERSION_CODE}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
 
 }
