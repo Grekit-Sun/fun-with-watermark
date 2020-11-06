@@ -5,7 +5,6 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 
-import com.squareup.leakcanary.LeakCanary;
 import com.yifan.funwithwatermark.utils.StringUtil;
 
 import java.util.List;
@@ -25,18 +24,18 @@ public class MyApplication extends Application {
             return;
         }
         appCtx = getApplicationContext();
-        initLeakCanary();
+//        initLeakCanary();
     }
 
     /**
      * 初始化LeakCanary
      */
-    private void initLeakCanary() {
-        if(LeakCanary.isInAnalyzerProcess(this)){
-            return;
-        }
-        LeakCanary.install(this);
-    }
+//    private void initLeakCanary() {
+//        if(LeakCanary.isInAnalyzerProcess(this)){
+//            return;
+//        }
+//        LeakCanary.install(this);
+//    }
 
     /**
      * 获取是否是主进程
@@ -44,13 +43,13 @@ public class MyApplication extends Application {
      * @return 是否是主进程
      */
     private boolean isMainProcess() {
-        return StringUtil.equals(getProcessName(), getPackageName());
+        return StringUtil.equals(getProcess(), getPackageName());
     }
 
     /**
      * 获取当前进程的名称.
      */
-    private String getProcessName() {
+    private String getProcess() {
         int pid = android.os.Process.myPid();
         ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> rps;
