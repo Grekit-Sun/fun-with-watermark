@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">FunWithWatermark</string>
+    <string name="app_name">玩转水印</string>
+    <string name="hint_link_msg">复制视频分享链接粘贴到这里～</string>
+    <string name="video_link">视频链接</string>
 </resources>
