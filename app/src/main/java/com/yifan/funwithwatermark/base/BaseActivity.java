@@ -5,9 +5,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yifan.funwithwatermark.helper.WeakHandlerHelper;
+import com.yifan.funwithwatermark.toast.WeToast;
 
 import java.lang.reflect.Constructor;
 
+import io.reactivex.annotations.NonNull;
 
 public abstract class BaseActivity<T extends IPresenter, K> extends AppCompatActivity {
 
@@ -23,10 +25,12 @@ public abstract class BaseActivity<T extends IPresenter, K> extends AppCompatAct
         initPresenter();
     }
 
-
+    /**
+     * 获取布局
+     *
+     * @return
+     */
     protected abstract int getLayout();
-
-    protected abstract void bindView();
 
     /**
      * 返回View层的接口类.
@@ -52,6 +56,7 @@ public abstract class BaseActivity<T extends IPresenter, K> extends AppCompatAct
 
     /**
      * 延时处理
+     *
      * @param runnable
      * @param delayMillis
      */
@@ -69,5 +74,14 @@ public abstract class BaseActivity<T extends IPresenter, K> extends AppCompatAct
         this.finish();
     }
 
+    /**
+     * 显示Toast提示.
+     */
+    public void showToast(@NonNull String info) {
+        WeToast.getInstance().showToast(this, info);
+    }
 
+    public void showDialog(String string) {
+
+    }
 }

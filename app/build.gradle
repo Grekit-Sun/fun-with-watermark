@@ -39,13 +39,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //butterknife
-//    api "com.jakewharton:butterknife:${project.BUTTERKNIFE_VERSION_CODE}"
-//    annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
+    api "com.jakewharton:butterknife:${project.BUTTERKNIFE_VERSION_CODE}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${project.BUTTERKNIFE_VERSION_CODE}"
     // Leakcanary
 //    debugImplementation "com.squareup.leakcanary:leakcanary-android:${project.LEAKCANARY_VERSION_CODE}"
 //    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${project.LEAKCANARY_VERSION_CODE}"
     // AndPermission
-//    api "com.yanzhenjie:permission:${project.ANDPERMISSION_VERSION_CODE}"
+    api "com.yanzhenjie:permission:${project.ANDPERMISSION_VERSION_CODE}"
 //    //gson
 //    api "com.google.code.gson:gson:${project.GSON_VERSION_CODE}"
 //    //smartTabLayout
