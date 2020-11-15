@@ -46,8 +46,8 @@ dependencies {
 //    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${project.LEAKCANARY_VERSION_CODE}"
     // AndPermission
     api "com.yanzhenjie:permission:${project.ANDPERMISSION_VERSION_CODE}"
-//    //gson
-//    api "com.google.code.gson:gson:${project.GSON_VERSION_CODE}"
+    //gson
+    api "com.google.code.gson:gson:${project.GSON_VERSION_CODE}"
 //    //smartTabLayout
 //    api "com.ogaclejapan.smarttablayout:library:${project.SMARTTABLAYOUT_VERSION_CODE}"
 //    api "com.ogaclejapan.smarttablayout:utils-v13:${project.SMARTTABLAYOUT_VERSION_CODE}"
@@ -62,6 +62,10 @@ dependencies {
     api "com.squareup.retrofit2:adapter-rxjava2:${project.RETROFIT_VERSION_CODE}"
     api "io.reactivex.rxjava2:rxandroid:${project.RXANDROID_VERSION_CODE}"
     api "io.reactivex.rxjava2:rxjava:${project.RXJAVA_VERSION_CODE}"
+
+//    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
+//    api "io.reactivex.rxjava3:rxjava:3.0.4"
+
 //    // Room components
 //    implementation "android.arch.persistence.room:runtime:${project.ROOM_VERSION_CODE}"
 //    annotationProcessor "android.arch.persistence.room:compiler:${project.ROOM_VERSION_CODE}"

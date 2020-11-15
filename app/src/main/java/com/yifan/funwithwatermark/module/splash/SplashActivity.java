@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.core.app.ActivityCompat;
 
 import com.yanzhenjie.permission.Action;
-import com.yifan.funwithwatermark.MainActivity;
+import com.yifan.funwithwatermark.module.main.MainActivity;
 import com.yifan.funwithwatermark.R;
 import com.yifan.funwithwatermark.base.BaseActivity;
 import com.yifan.funwithwatermark.constants.SplashConstants;
@@ -34,11 +34,11 @@ public class SplashActivity extends BaseActivity<SplashPresenter, ISplashView> i
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         initView();     //初始化控件
     }
 
     protected void initView() {
-        ButterKnife.bind(this);
         //设置自定义字体
         Typeface typeface = Typeface.createFromAsset(getAssets(), SplashConstants.FONTS);
         mAppNameTxt.setTypeface(typeface);

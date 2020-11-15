@@ -1,6 +1,6 @@
 package com.yifan.funwithwatermark.module.splash;
 
-public interface ISplashView {
+interface ISplashView {
 
     /**
      * 跳转主页的最大延迟
