@@ -6,5 +6,7 @@
     <!--water mark-->
     <string name="hint_link_msg">复制视频分享链接粘贴到这里～</string>
     <string name="video_link">视频链接</string>
+    <string name="delete_water_mark">去水印</string>
+    <string name="download_video_success">视频下载成功！</string>
 
 </resources>

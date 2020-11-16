@@ -9,9 +9,9 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public abstract class DbOperateHelper<T> {
+public abstract class AsyncOperateHelper<T> {
 
-    public DbOperateHelper() {
+    public AsyncOperateHelper() {
         dbOperate();
     }
 

@@ -13,10 +13,11 @@ public class UrlUtil {
 
     /**
      * url校验
+     *
      * @param webUrl
      * @return
      */
-    public static boolean urlCheck1  (String webUrl) {
+    public static boolean urlCheck1(String webUrl) {
         URL url;
         try {
             url = new URL(webUrl);
@@ -30,6 +31,7 @@ public class UrlUtil {
 
     /**
      * url校验
+     *
      * @param webUrl
      * @return
      */
@@ -43,7 +45,7 @@ public class UrlUtil {
             // 以上方法之一是合法的，具体取决于协议的限制。
             conn.setRequestMethod("HEAD");
             // 从HTTP响应消息获取状态码
-            return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
+            return (conn.getResponseCode() == HttpURLConnection.HTTP_OK || conn.getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

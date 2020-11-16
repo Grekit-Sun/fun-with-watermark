@@ -10,7 +10,7 @@ import io.reactivex.FlowableTransformer;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -39,15 +39,15 @@ public class RxComposerHelper {
         };
     }
 
-    private static <T> ObservableSource<T> composeContext(Context context, Observable<T> observable) {
-        if (context instanceof RxActivity) {
-            return observable.compose(((RxActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        } else if (context instanceof RxFragmentActivity) {
-            return observable.compose(((RxFragmentActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        } else if (context instanceof RxAppCompatActivity) {
-            return observable.compose(((RxAppCompatActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        } else {
-            return observable;
-        }
-    }
+//    private static <T> ObservableSource<T> composeContext(Context context, Observable<T> observable) {
+//        if (context instanceof RxActivity) {
+//            return observable.compose(((RxActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
+//        } else if (context instanceof RxFragmentActivity) {
+//            return observable.compose(((RxFragmentActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
+//        } else if (context instanceof RxAppCompatActivity) {
+//            return observable.compose(((RxAppCompatActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
+//        } else {
+//            return observable;
+//        }
+//    }
 }

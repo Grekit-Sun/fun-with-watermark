@@ -62,9 +62,8 @@ dependencies {
     api "com.squareup.retrofit2:adapter-rxjava2:${project.RETROFIT_VERSION_CODE}"
     api "io.reactivex.rxjava2:rxandroid:${project.RXANDROID_VERSION_CODE}"
     api "io.reactivex.rxjava2:rxjava:${project.RXJAVA_VERSION_CODE}"
-
-//    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
-//    api "io.reactivex.rxjava3:rxjava:3.0.4"
+    api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 
 //    // Room components
 //    implementation "android.arch.persistence.room:runtime:${project.ROOM_VERSION_CODE}"

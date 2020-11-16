@@ -14,13 +14,13 @@ import static com.yifan.funwithwatermark.MyApplication.appCtx;
 
 public abstract class SimpleHttpSubscriber<T> implements Observer<T> {
     private boolean mShowDialog;
-    private ProgressDialog dialog;
+//    private ProgressDialog dialog;
     private Disposable d;
-    private Context context;
+//    private Context context;
 
 
-    public SimpleHttpSubscriber(Context context) {
-        this.context = context;
+    public SimpleHttpSubscriber() {
+//        this.context = context;
         mShowDialog = true;
     }
 
@@ -29,15 +29,15 @@ public abstract class SimpleHttpSubscriber<T> implements Observer<T> {
 
         this.d = d;
         if (!isConnected()) {
-            Toast.makeText(context, "网络异常，请检查网络状态...", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "网络异常，请检查网络状态...", Toast.LENGTH_SHORT).show();
             if (d.isDisposed()) {
                 d.dispose();
             }
         } else {
-            if (dialog == null && mShowDialog == true) {
-                dialog = new ProgressDialog(context);
-                dialog.show();
-            }
+//            if (dialog == null && mShowDialog == true) {
+////                dialog = new ProgressDialog(context);
+//                dialog.show();
+//            }
         }
 
     }
@@ -92,9 +92,9 @@ public abstract class SimpleHttpSubscriber<T> implements Observer<T> {
     }
 
     public void hidDialog() {
-        if (dialog != null && mShowDialog == true)
-            dialog.dismiss();
-        dialog = null;
+//        if (dialog != null && mShowDialog == true)
+//            dialog.dismiss();
+//        dialog = null;
     }
 
     public abstract void onResponse(T t);
