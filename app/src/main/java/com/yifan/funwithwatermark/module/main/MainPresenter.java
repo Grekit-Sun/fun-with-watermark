@@ -60,6 +60,8 @@ public class MainPresenter implements IPresenter {
         new AsyncOperateHelper<Boolean>() {
             @Override
             protected Boolean doInBackground() {
+                //转化以http为头
+
                 return UrlUtil.urlCheck(webUrl);
             }
 
@@ -135,6 +137,14 @@ public class MainPresenter implements IPresenter {
         };
     }
 
+    /**
+     * 转化为url格式
+     * @param str
+     * @return
+     */
+    private String transformUrl(String str){
+        char[] chars = str.toCharArray();
+    }
     /**
      * 下载监听
      */
