@@ -9,7 +9,6 @@ import android.widget.Toast;
 import com.yifan.funwithwatermark.R;
 import com.yifan.funwithwatermark.base.BaseActivity;
 import com.yifan.funwithwatermark.utils.ClipboardUtil;
-import com.yifan.funwithwatermark.utils.UrlUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +32,7 @@ public class MainActivity extends BaseActivity<MainPresenter, IMainView> impleme
                 //链接校验
                 mWebUrl = mEdVideoLink.getText().toString().trim();
                 if (mWebUrl != null && mPresenter != null) {
+                    mWebUrl = mPresenter.transformUrl(mWebUrl);
                     mPresenter.urlCheck(mWebUrl);
                 }
             }

@@ -10,11 +10,11 @@ import android.os.Environment;
 import com.yifan.funwithwatermark.base.IPresenter;
 import com.yifan.funwithwatermark.helper.AsyncOperateHelper;
 import com.yifan.funwithwatermark.module.main.bean.TikTokBean;
+import com.yifan.funwithwatermark.utils.AlgorithmUtil;
 import com.yifan.funwithwatermark.utils.SimpleHttpSubscriber;
 import com.yifan.funwithwatermark.utils.UrlUtil;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import io.reactivex.disposables.Disposable;
 
@@ -60,8 +60,7 @@ public class MainPresenter implements IPresenter {
         new AsyncOperateHelper<Boolean>() {
             @Override
             protected Boolean doInBackground() {
-                //转化以http为头
-
+                //链接校验
                 return UrlUtil.urlCheck(webUrl);
             }
 
@@ -142,9 +141,13 @@ public class MainPresenter implements IPresenter {
      * @param str
      * @return
      */
-    private String transformUrl(String str){
-        char[] chars = str.toCharArray();
+    String transformUrl(String str) {
+        if (str == null && str.length() <= 0) {
+            return "";
+        }
+        return AlgorithmUtil.urlTransform(str);
     }
+
     /**
      * 下载监听
      */
