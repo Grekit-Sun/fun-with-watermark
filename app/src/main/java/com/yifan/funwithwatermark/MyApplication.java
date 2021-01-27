@@ -24,6 +24,7 @@ public class MyApplication extends Application {
             return;
         }
         appCtx = getApplicationContext();
+
 //        initLeakCanary();
     }
 

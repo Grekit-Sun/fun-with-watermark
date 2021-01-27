@@ -46,4 +46,12 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
+<!--    <com.yifan.funwithwatermark.view.PieView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
+<!--    -->
+    <com.yifan.funwithwatermark.view.CirCleView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
