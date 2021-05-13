@@ -11,6 +11,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.net.Uri;
+import android.os.Binder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -157,9 +158,7 @@ public class TestService extends Service {
     }
 
     /**
-
      * 获取GPS位置监听器，包含四个不同触发方式
-
      */
     LocationListener myLocationListener = new LocationListener() {
         // Provider的状态在可用、暂时不可用和无服务三个状态直接切换时触发此函数
@@ -167,23 +166,28 @@ public class TestService extends Service {
         public void onStatusChanged(String provider, int status, Bundle extras) {
 
         }
+
         // 当位置获取（GPS）打开时调用此方法
         @Override
         public void onProviderEnabled(String provider) {
-            Log.d(TAG,"执行，GPS的打开");
+            Log.d(TAG, "执行，GPS的打开");
         }
+
         // 当位置获取（GPS）关闭时调用此方法
         @Override
         public void onProviderDisabled(String provider) {
-            Log.d(TAG,"执行，GPS关闭");
+            Log.d(TAG, "执行，GPS关闭");
         }
+
         // 当坐标改变时触发此方法，如果获取到相同坐标，它就不会被触发
         @Override
         public void onLocationChanged(Location location) {
             if (location != null) {
 //                latitude = location.getLatitude(); // 经度
 //                longitude = location.getLongitude(); // 纬度
-                Log.d(TAG,"执行，坐标发生改变 - >"+"Lat: " + location.getLatitude() + " Lng: " + location.getLongitude());
+                Log.d(TAG, "执行，坐标发生改变 - >" + "Lat: " + location.getLatitude() + " Lng: " + location.getLongitude());
+                if(mIservice != null)
+                mIservice.onLocationChanged(location.getLatitude(), location.getLongitude());
             }
 
         }
@@ -193,6 +197,22 @@ public class TestService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return new MyBinder();
+    }
+
+    public class MyBinder extends Binder {
+        public void registerListenr(Iservice iservice) {
+            registerListener(iservice);
+        }
+    }
+
+    private Iservice mIservice;
+
+    public interface Iservice {
+        void onLocationChanged(double Lat, double Lng);
+    }
+
+    public void registerListener(Iservice iservice) {
+        mIservice = iservice;
     }
 }

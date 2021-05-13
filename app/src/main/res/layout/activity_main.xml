@@ -32,6 +32,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/lat"
+            android:layout_marginTop="@dimen/permission_dp_10"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/Lng"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="@dimen/permission_dp_10"
+            android:layout_toRightOf="@+id/lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/old_lat"
+            android:layout_marginTop="@dimen/permission_dp_10"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@+id/lat"
+            android:text="old_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/old_Lng"
+            android:layout_marginLeft="25dp"
+            android:text="old_Lng"
+            android:layout_below="@+id/Lng"
+            android:layout_marginTop="@dimen/permission_dp_10"
+            android:layout_toRightOf="@+id/old_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/cnt"
+            android:layout_marginTop="@dimen/permission_dp_10"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@+id/old_lat"
+            android:text="-1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
         <Button
             android:id="@+id/btn_del_video"
             android:layout_width="wrap_content"
@@ -39,7 +83,8 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
             android:layout_alignParentRight="true"
-            android:text="@string/delete_water_mark" />
+            android:text="@string/delete_water_mark"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/tv_model"
             android:layout_width="wrap_content"
